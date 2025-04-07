@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Convidados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="listarConvidados()">
+    <div class="convite">
+        <h1>📋 Lista de Convidados Confirmados</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Acompanhante</th>
+                </tr>
+            </thead>
+            <tbody id="lista-convidados">
+                <tr><td colspan="2">Carregando...</td></tr>
+            </tbody>
+        </table>
+        <button onclick="window.location.href='index.html'">Voltar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
