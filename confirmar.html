@@ -30,10 +30,16 @@
     const numero = "995282393"; // Coloque seu número com DDD e país. Ex: 5511999999999
 
     function getDados() {
-      const nome = document.getElementById("nome").value;
-      const acompanhantes = document.getElementById("acompanhantes").value;
-      return { nome, acompanhantes };
-    }
+  const nome = document.getElementById("nome").value.trim();
+  const acompanhantes = document.getElementById("acompanhantes").value;
+
+  if (!nome) {
+    alert("Por favor, preencha seu nome antes de confirmar.");
+    throw new Error("Nome não preenchido.");
+  }
+
+  return { nome, acompanhantes };
+}
 
     document.getElementById("btnIgreja").addEventListener("click", function() {
       const { nome, acompanhantes } = getDados();
