@@ -16,25 +16,76 @@
       <label for="acompanhantes">Nº de acompanhantes:</label>
       <input type="number" id="acompanhantes" name="acompanhantes" min="0" required />
 <div>
-      <button type="submit">Enviar via WhatsApp</button>
+      <button type="submit">Vou na Igreja!!</button>
+<button type="submit1">Vou na Churrascaria!!</button>
+<button type="submit2">Vou nos dois!!</button>
+<button type="submit3">Não poderei ir em nenhum</button>
+
       <button onclick="window.location.href='index.html'">Voltar</button>
   </div>
     </form>
   </div>
 
   <script>
-    document.getElementById("confirmForm").addEventListener("submit", function(e) {
+
+/* vou na igreja */    document.getElementById("confirmForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
       const nome = document.getElementById("nome").value;
       const acompanhantes = document.getElementById("acompanhantes").value;
       const numero = "995282393"; // Coloque seu número com DDD e país. Ex: 5511999999999
 
-      const mensagem = `Olá! Me chamo ${nome} e confirmo presença no aniversário da Jade. Estarei com ${acompanhantes} acompanhante(s).`;
+      const mensagem = `Olá! Me chamo ${nome} e confirmo presença na igreja para o batizado da Jade. Estarei com ${acompanhantes} acompanhante(s).`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(url, "_blank");
+    }); /* vou na igreja */
+/* vou na churrascaria */
+document.getElementById("confirmForm").addEventListener("submit1", function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const acompanhantes = document.getElementById("acompanhantes").value;
+      const numero = "995282393"; // Coloque seu número com DDD e país. Ex: 5511999999999
+
+      const mensagem = `Olá! Me chamo ${nome} e confirmo presença na churrascaria após o batizado. Estarei com ${acompanhantes} acompanhante(s).`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(url, "_blank");
+    }); /* vou na churras */
+/* vou nos dois */
+
+document.getElementById("confirmForm").addEventListener("submit2", function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const acompanhantes = document.getElementById("acompanhantes").value;
+      const numero = "995282393"; // Coloque seu número com DDD e país. Ex: 5511999999999
+
+      const mensagem = `Olá! Me chamo ${nome} e confirmo presença para o batizado, tanto na igreja quanto na churrascaria. Estarei com ${acompanhantes} acompanhante(s).`;
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
       window.open(url, "_blank");
     });
+
+/* vou nos dois */
+
+/* não vou ir */
+document.getElementById("confirmForm").addEventListener("submit3", function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const acompanhantes = document.getElementById("acompanhantes").value;
+      const numero = "995282393"; // Coloque seu número com DDD e país. Ex: 5511999999999
+
+      const mensagem = `Olá! Me chamo ${nome} e infelizmente não poderei ir no batizado da Jade.`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(url, "_blank");
+    });
+
+/* não vou ir */
+
   </script>
 </body>
 </html>
